@@ -29,7 +29,7 @@ const withIosKeychainGroup: ConfigPlugin = (config) => {
 
 const withAppDelegateConfig: ConfigPlugin = (config) => {
   return withAppDelegate(config, (mod) => {
-    if (mod.modResults.language === 'objc') {
+    if (mod.modResults.language === 'objc' || mod.modResults.language === 'objcpp') {
       mod.modResults.contents = setAppDelegate(mod.modResults.contents);
     } else {
       throw new Error('Cannot modify AppDelegate because it is not in objective-c');
