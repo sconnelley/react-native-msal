@@ -28,7 +28,7 @@ const withIosKeychainGroup = (config) => {
 };
 const withAppDelegateConfig = (config) => {
     return (0, config_plugins_1.withAppDelegate)(config, (mod) => {
-        if (mod.modResults.language === 'objc') {
+        if (mod.modResults.language === 'objc' || mod.modResults.language === 'objcpp') {
             mod.modResults.contents = setAppDelegate(mod.modResults.contents);
         }
         else {
